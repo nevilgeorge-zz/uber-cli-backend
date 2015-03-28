@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
 
 app.get('/redirect', function(req, res) {
 	console.log(req.query);
-	res.send('You may now close this page.');
+	res.send('Please enter the following code into your terminal: ' + code);
 });
 
 app.listen(app.get('port'), function() {
