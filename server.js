@@ -4,7 +4,7 @@ var express = require('express'),
 	app = express(),
 	cors = require('cors');
 
-var port = 7000;
+app.set('port', (process.env.PORT || 7000));
 app.use(cors());
 
 app.get('/', function(req, res) {
@@ -16,6 +16,6 @@ app.get('/redirect', function(req, res) {
 	res.send('You may now close this page.');
 });
 
-app.listen(port, function() {
-	console.log('Listening on port ' + port);
+app.listen(app.get('port'), function() {
+	console.log('Listening on port ' + app.get('port'));
 });
